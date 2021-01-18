@@ -9,8 +9,10 @@ case $OS in
 			"EN" | "En" | "en")
 				clear
 				printf "\033[32mUpdating all packages\n\033[m"
+				printf "\033[32mThis may take some time depending on the power of your computer and your connection.\n\033[m"
 				sudo apt-get update && sudo apt-get upgrade && clear
 				printf "\033[32mInstall all required packages\n\033[m"
+				printf "\033[32mThis may take some time depending on the power of your computer and your connection.\n\033[m"
 				sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
 				printf "\033[32mInstall Norminette\n\033[m"
 				git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
@@ -24,10 +26,10 @@ case $OS in
 			"FR" | "Fr" | "fr")
 				clear
 				printf "\033[32mMise à jour de tous les paquets\n\033[m"
-				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre correction.\n\033[m"
+				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
 				sudo apt-get update && sudo apt-get upgrade && clear
 				printf "\033[32mInstallation tous les paquets nécessaires\n\033[m"
-				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre correction.\n\033[m"
+				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
 				sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
 				printf "\033[32mInstallation Norminette\n\033[m"
 				git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
