@@ -13,4 +13,4 @@
 |Debian|wip|
 |MacOs|wip|
 
-<h4 align="center">Original project by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
+<h4 align="center">Original idea by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
