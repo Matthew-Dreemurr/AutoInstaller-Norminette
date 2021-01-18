@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 clear
 printf "\033[32mUpdating all packages\n\033[m"
 sudo apt-get update && sudo apt-get upgrade && clear
