@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# exit when any command fails
+set -e
+# keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+# echo an error message before exiting
+trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
+# check for SIGINT or CTRL+C
+trap exit INT
 
 read -p 'Linux, Macos ? [L, M]: ' OS
 case $OS in
@@ -7,6 +15,9 @@ case $OS in
 		read -p 'En, Fr ? [en, fr]: ' lang
 		case $lang in
 			"EN" | "En" | "en")
+				clear
+				printf "\033[32m  _ _ ___   _  _               _          _   _       \\n | | |_  ) | \\| |___ _ _ _ __ (_)_ _  ___| |_| |_ ___ \\n |_  _/ /  | .\` / _ \\ \'_| \'  \\| | \' \\/ -_)  _|  _/ -_)\\n   |_/___| |_|\\_\\___/_| |_|_|_|_|_||_\\___|\\__|\\__\\___|\n\nWelcome to the installation of the norminette.\nDuring the installation your password will be asked several times, so keep an eye out!\nTo start, press \`Enter\` or press \`Ctrl\` C to stop the installation.\033[m"
+				read void
 				clear
 				printf "\033[32mUpdating all packages\n\033[m"
 				printf "\033[32mThis may take some time depending on the power of your computer and your connection.\n\033[m"
@@ -24,6 +35,9 @@ case $OS in
 				echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.bashrc && source ~/.bashrc
 			;;
 			"FR" | "Fr" | "fr")
+				clear
+				printf "\033[32m  _ _ ___   _  _               _          _   _       \\n | | |_  ) | \\| |___ _ _ _ __ (_)_ _  ___| |_| |_ ___ \\n |_  _/ /  | .\` / _ \\ \'_| \'  \\| | \' \\/ -_)  _|  _/ -_)\\n   |_/___| |_|\\_\\___/_| |_|_|_|_|_||_\\___|\\__|\\__\\___|\n\nBienvenue a l'installation de la norminette.\nDurant l'installation votre mot de passe vous sera demandez plusieurs fois, donc gardées un œil !\nPour commencer, appuyez sur \`Enter\` ou faite \`Ctrl C\` pour arreter l'installation.\033[m"
+				read void
 				clear
 				printf "\033[32mMise à jour de tous les paquets\n\033[m"
 				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
