@@ -27,6 +27,6 @@
 |Ubuntu WSL|✅|
 |Debian|✅ (not tested)|
 |Debian WSL|✅|
-|Macos|❌ (wip)|
+|Macos|✅|
 
 <h4 align="center">Original idea by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
