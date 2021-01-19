@@ -6,6 +6,7 @@
 
 <h2 align="center">Use this command to start the installation:</h2>
 <p align="center"><code>wget https://raw.githubusercontent.com/Matthew-Dreemurr/AutoInstaller-Norminette/main/norminette_install.sh && bash norminette_install.sh</code></p>
+<p align="center">Finally, restart your terminal</p>
 
 
 |OS|Supported|
