@@ -16,7 +16,7 @@
 <p align="center">Finally, restart your terminal</p>
 
 <h2 align="center">Installation with the file:</h2>
-<p align="center">Download the file form the <a href="https://github.com/Matthew-Dreemurr/AutoInstaller-Norminette/releases/download/V0.1/norminette_install.sh">release</a>.</p>
+<p align="center">Download the file form the <a href="https://github.com/Matthew-Dreemurr/AutoInstaller-Norminette/releases/download/V0.2/norminette_install.sh">release</a>.</p>
 <p align="center">and run the scrip with <code>bash norminette_install.sh</code></p>
 
 <h2 align="center">Support:</h2>
