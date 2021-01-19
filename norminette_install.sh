@@ -1,4 +1,16 @@
-#!/bin/bash
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    norminette_install.sh                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/01/19 00:59:19 by mhadad            #+#    #+#              #
+#    Updated: 2021/01/19 01:14:21 by mhadad           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#! /bin/bash
 
 # exit when any command fails
 set -e
@@ -8,6 +20,33 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 # check for SIGINT or CTRL+C
 trap exit INT
+
+apt_updt()
+{
+sudo apt-get update && sudo apt-get upgrade && clear
+}
+
+apt_norm()
+{
+sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
+}
+
+norm_inst()
+{
+git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
+cd ~/.norminette/ && \
+sudo bundle && clear
+}
+
+alias_zsh()
+{
+echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.zshrc && source ~/.zshrc
+}
+
+alias_bash()
+{
+echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.bashrc && source ~/.bashrc
+}
 
 read -p 'Linux, Macos ? [L, M]: ' OS
 case $OS in
@@ -21,18 +60,16 @@ case $OS in
 				clear
 				printf "\033[32mUpdating all packages\n\033[m"
 				printf "\033[32mThis may take some time depending on the power of your computer and your connection.\n\033[m"
-				sudo apt-get update && sudo apt-get upgrade && clear
+				apt_updt
 				printf "\033[32mInstall all required packages\n\033[m"
 				printf "\033[32mThis may take some time depending on the power of your computer and your connection.\n\033[m"
-				sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
+				apt_norm
 				printf "\033[32mInstall Norminette\n\033[m"
-				git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
-				cd ~/.norminette/ && \
-				sudo bundle && clear
+				norm_inst
 				printf "\033[32mAdd zsh alias\n\033[m"
-				echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.zshrc && source ~/.zshrc
+				alias_zsh
 				printf "\033[32mAdd bash alias\n\033[m"
-				echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.bashrc && source ~/.bashrc
+				alias_bash
 			;;
 			"FR" | "Fr" | "fr")
 				clear
@@ -41,21 +78,16 @@ case $OS in
 				clear
 				printf "\033[32mMise à jour de tous les paquets\n\033[m"
 				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
-				sudo apt-get update && sudo apt-get upgrade && clear
+				apt_updt
 				printf "\033[32mInstallation tous les paquets nécessaires\n\033[m"
 				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
-				sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
+				apt_norm
 				printf "\033[32mInstallation Norminette\n\033[m"
-				git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
-				cd ~/.norminette/ && \
-				sudo bundle && clear
+				norm_inst
 				printf "\033[32mAjout de l'alias zsh\n\033[m"
-				echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.zshrc && source ~/.zshrc
+				alias_zsh
 				printf "\033[32mAjout de l'alias zsh bash\n\033[m"
-				echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.bashrc && source ~/.bashrc
-			;;
-			*)
-					echo "Error, wrong lang"
+				alias_bash
 			;;
 		esac
 ;;
@@ -67,9 +99,6 @@ case $OS in
 		;;
 		"FR" | "Fr" | "fr")
 			printf "\033[32mFr Macos WIP\n\033[m"
-		;;
-		*)
-			echo "Error, wrong lang"
 		;;
 	esac
 ;;
