@@ -108,9 +108,10 @@ case $OS in
 			printf "\033[32m  _ _ ___   _  _               _          _   _       \\n | | |_  ) | \\| |___ _ _ _ __ (_)_ _  ___| |_| |_ ___ \\n |_  _/ /  | .\` / _ \\ \'_| \'  \\| | \' \\/ -_)  _|  _/ -_)\\n   |_/___| |_|\\_\\___/_| |_|_|_|_|_||_\\___|\\__|\\__\\___|\n\nWelcome to the installation of the norminette.\nDuring the installation your password will be asked several times, so keep an eye out!\nTo start, press \`Enter\` or press \`Ctrl\` C to stop the installation.\033[m"
 			read void
 			clear
-			brew_inst
-			brew_git
+			printf "\033[32mInstallation de la Norminette\n\033[m"
 			mac_norm_inst
+			printf "\033[32mAdd zsh alias\n\033[m"
+			alias_zsh
 		;;
 		"FR" | "Fr" | "fr")
 			clear
@@ -121,8 +122,6 @@ case $OS in
 			mac_norm_inst
 			printf "\033[32mAjout de l'alias zsh\n\033[m"
 			alias_zsh
-			printf "\033[32mAjout de l'alias bash\n\033[m"
-			alias_bash
 		;;
 	esac
 ;;
