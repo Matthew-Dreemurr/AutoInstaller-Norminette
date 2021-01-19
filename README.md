@@ -11,7 +11,7 @@
 <p align="center">Finally, restart your terminal</p>
 <h3 align="center">Macos</h3>
 
-<p align="center">be sure to have Github and <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#how-to-install-zsh-on-many-platforms">zsh</a>installed</p>
+<p align="center">be sure to have Github and <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#how-to-install-zsh-on-many-platforms">zsh</a> installed</p>
 <p align="center"><code>curl -O https://raw.githubusercontent.com/Matthew-Dreemurr/AutoInstaller-Norminette/main/norminette_install.sh && bash norminette_install.sh</code></p>
 <p align="center">Finally, restart your terminal</p>
 
