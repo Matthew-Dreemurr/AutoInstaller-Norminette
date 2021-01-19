@@ -10,8 +10,8 @@
 
 |OS|Supported|
 |-|-|
-|Ubuntu|✅ (wip)|
-|Debian|❌ (wip)|
+|Ubuntu|✅ (wip not tested)|
+|Debian|❌ (wip not tested)|
 |Macos|❌ (wip)|
 
 <h4 align="center">Original idea by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
