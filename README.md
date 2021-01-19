@@ -12,7 +12,9 @@
 |OS|Supported|
 |-|-|
 |Ubuntu|✅|
-|Debian|✅ (wip not tested)|
+|Ubuntu WSL|🔧 (wip not tested)|
+|Debian|🔧 (wip not tested)|
+|Debian WSL|🔧 (wip not tested)|
 |Macos|❌ (wip)|
 
 <h4 align="center">Original idea by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
