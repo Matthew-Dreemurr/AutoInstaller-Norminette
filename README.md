@@ -1,7 +1,7 @@
 # WIP
 
 <h1 align="center">norminette V2.0.2 installer (Ubuntu, debian, WSL)</h1>
-<p align="center"><code>norminette_install.sh</code> is a simple script to automatically download and install the Norminette form the official repo of <a href="https://github.com/42Paris/norminette">42Paris</a> with all the deposits required for and creates aliases for zsh and bash.</p>
+<p align="center"><code>norminette_install.sh</code> is a simple script to automatically download and install the Norminette form the official repo of <a href="https://github.com/42Paris/norminette">42Paris</a> with all the deposits required and creates aliases for zsh and bash.</p>
 
 <h2 align="center">Installation in one command</h2>
 
