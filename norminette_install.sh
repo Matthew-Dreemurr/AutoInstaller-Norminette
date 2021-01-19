@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 00:59:19 by mhadad            #+#    #+#              #
-#    Updated: 2021/01/19 01:14:21 by mhadad           ###   ########.fr        #
+#    Updated: 2021/01/19 16:07:15 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,31 +21,48 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 # check for SIGINT or CTRL+C
 trap exit INT
 
-apt_updt()
-{
+#
+# Fonction for Linux install
+#
+
+apt_updt(){
 sudo apt-get update && sudo apt-get upgrade && clear
 }
 
-apt_norm()
-{
+apt_norm(){
 sudo apt-get install zsh git ruby ruby-bundler ruby-dev build-essential && clear
 }
 
-norm_inst()
-{
+norm_inst(){
 git clone https://github.com/42Paris/norminette.git ~/.norminette/ && \
 cd ~/.norminette/ && \
 sudo bundle && clear
 }
 
-alias_zsh()
-{
+alias_zsh(){
 echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.zshrc && source ~/.zshrc
 }
 
-alias_bash()
-{
+alias_bash(){
 echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.bashrc && source ~/.bashrc
+}
+
+#
+# Fonction for Linux install
+#
+
+brew_inst(){
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+brew_git(){
+brew install git
+}
+
+mac_norm_inst(){
+git clone https://github.com/42Paris/norminette.git ~/.norminette/
+cd ~/.norminette/
+bundle
 }
 
 read -p 'Linux, Macos ? [L, M]: ' OS
@@ -82,11 +99,11 @@ case $OS in
 				printf "\033[32mInstallation tous les paquets nécessaires\n\033[m"
 				printf "\033[32mCela peut prendre du temps dépendant de la puissance de votre ordinateur et de votre connection.\n\033[m"
 				apt_norm
-				printf "\033[32mInstallation Norminette\n\033[m"
+				printf "\033[32mInstallation de la Norminette\n\033[m"
 				norm_inst
 				printf "\033[32mAjout de l'alias zsh\n\033[m"
 				alias_zsh
-				printf "\033[32mAjout de l'alias zsh bash\n\033[m"
+				printf "\033[32mAjout de l'alias bash\n\033[m"
 				alias_bash
 			;;
 		esac
@@ -95,10 +112,28 @@ case $OS in
 	read -p 'En, Fr ? [en, fr]: ' lang
 	case $lang in
 		"EN" | "En" | "en")
-			printf "\033[32mEn Macos WIP\n\033[m"
+			clear
+			printf "\033[32m  _ _ ___   _  _               _          _   _       \\n | | |_  ) | \\| |___ _ _ _ __ (_)_ _  ___| |_| |_ ___ \\n |_  _/ /  | .\` / _ \\ \'_| \'  \\| | \' \\/ -_)  _|  _/ -_)\\n   |_/___| |_|\\_\\___/_| |_|_|_|_|_||_\\___|\\__|\\__\\___|\n\nWelcome to the installation of the norminette.\nDuring the installation your password will be asked several times, so keep an eye out!\nTo start, press \`Enter\` or press \`Ctrl\` C to stop the installation.\033[m"
+			read void
+			clear
+			brew_inst
+			brew_git
+			mac_norm_inst
 		;;
 		"FR" | "Fr" | "fr")
-			printf "\033[32mFr Macos WIP\n\033[m"
+			clear
+			printf "\033[32m  _ _ ___   _  _               _          _   _       \\n | | |_  ) | \\| |___ _ _ _ __ (_)_ _  ___| |_| |_ ___ \\n |_  _/ /  | .\` / _ \\ \'_| \'  \\| | \' \\/ -_)  _|  _/ -_)\\n   |_/___| |_|\\_\\___/_| |_|_|_|_|_||_\\___|\\__|\\__\\___|\n\nWelcome to the installation of the norminette.\nDuring the installation your password will be asked several times, so keep an eye out!\nTo start, press \`Enter\` or press \`Ctrl\` C to stop the installation.\033[m"
+			read void
+			clear
+			printf "\033[32mInstallation des logiciels nécessaires\n\033[m"
+			brew_inst
+			brew_git
+			printf "\033[32mInstallation de la Norminette\n\033[m"
+			mac_norm_inst
+			printf "\033[32mAjout de l'alias zsh\n\033[m"
+			alias_zsh
+			printf "\033[32mAjout de l'alias bash\n\033[m"
+			alias_bash
 		;;
 	esac
 ;;
