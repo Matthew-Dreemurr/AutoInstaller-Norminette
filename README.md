@@ -5,10 +5,14 @@
 <p align="center"><code>norminette_install.sh</code> is a simple script to automatically download and install the Norminette form the official repo of <a href="https://github.com/42Paris/norminette">42Paris</a> with all the deposits required for and creates aliases for zsh and bash.</p>
 
 <h2 align="center">Installation in one command</h2>
+
 <h3 align="center">Linux:</h3>
 <p align="center">be sure to have wget installed<br><code>apt-get update && apt-get install wget</code></p>
 <p align="center"><code>wget https://raw.githubusercontent.com/Matthew-Dreemurr/AutoInstaller-Norminette/main/norminette_install.sh && bash norminette_install.sh</code></p>
 <p align="center">Finally, restart your terminal</p>
+
+<br>
+
 <h3 align="center">Macos</h3>
 
 <p align="center">be sure to have Github and <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#how-to-install-zsh-on-many-platforms">zsh</a> installed</p>
@@ -28,5 +32,3 @@
 |Debian|✅ (not tested)|
 |Debian WSL|✅|
 |Macos|✅|
-
-<h4 align="center">Original idea by <a href="https://github.com/s19gregoire">@s19gregoire</a></h4>
