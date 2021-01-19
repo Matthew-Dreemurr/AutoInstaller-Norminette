@@ -18,7 +18,7 @@
 |OS|Supported|
 |-|-|
 |Ubuntu|✅|
-|Ubuntu WSL|🔧 (wip not tested)|
+|Ubuntu WSL|✅|
 |Debian|✅ (not tested)|
 |Debian WSL|✅|
 |Macos|❌ (wip)|
