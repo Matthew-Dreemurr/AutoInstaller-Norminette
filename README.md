@@ -6,7 +6,7 @@
 <h2 align="center">Installation in one command</h2>
 
 <h3 align="center">Linux & WSL:</h3>
-<p align="center">be sure to have wget installed<br><code>apt-get update && apt-get install wget</code></p>
+<p align="center">be sure to have wget installed<br><code>sudo apt-get update && apt-get install wget</code></p>
 <p align="center"><code>wget https://raw.githubusercontent.com/Matthew-Dreemurr/AutoInstaller-Norminette/main/norminette_install.sh && bash norminette_install.sh</code></p>
 <p align="center">Finally, restart your terminal</p>
 
